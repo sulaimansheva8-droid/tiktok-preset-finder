@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b18">
+  <meta name="description" content="Cari preset Alight Motion dari video TikTok dengan mudah.">
+  <title>TikTok Preset Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="TikTok Preset Finder beranda">
+      <span class="brand-icon">♪</span>
+      <span><strong>TikTok Preset Finder <b class="sparkle">✦</b></strong><small>Find Alight Motion Preset from TikTok</small></span>
+    </a>
+    <nav><a class="nav-link active" href="#home">⌂ <span>Home</span></a><a class="nav-link" href="#history">◷ <span>Riwayat</span></a><a class="nav-link" href="#about">ⓘ <span>Tentang</span></a></nav>
+    <div class="api-pill"><span class="cloud">☁</span> Powered by <b>SynoxCloud</b><i></i></div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>✦</span> TikTok Preset Finder</div>
+        <h1>Cari Preset <em>Alight Motion</em> dari Video <strong>TikTok</strong></h1>
+        <p>Masukkan link video TikTok dan temukan preset yang dibagikan di komentar. Cepat, praktis, dan semua dari satu tempat!</p>
+        <div class="hero-badges"><span>✦ Mudah digunakan</span><span>↗ Hasil otomatis</span><span>▣ Ramah HP</span></div>
+      </div>
+      <form class="search-card" id="searchForm">
+        <label for="tiktokUrl"><span class="link-symbol">↗</span> Masukkan Link TikTok</label>
+        <div class="input-wrap"><input id="tiktokUrl" type="url" placeholder="https://vt.tiktok.com/..." autocomplete="url" required><button type="button" id="clearBtn" aria-label="Hapus link">×</button></div>
+        <button class="search-btn" type="submit"><span class="search-icon">⌕</span> <span id="buttonText">Cari Preset</span><span class="arrow">›</span></button>
+        <p class="hint">Contoh: https://vt.tiktok.com/ZSbmR9kCu/</p>
+        <div class="form-message" id="formMessage" role="status"></div>
+      </form>
+    </section>
+
+    <section class="results-section" id="results" aria-live="polite">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">⌕</div><h2>Siap mencari preset?</h2>
+        <p>Tempel link video TikTok di atas, lalu tekan <b>Cari Preset</b>. Hasil pencarian akan muncul di sini.</p>
+      </div>
+      <div class="result-grid hidden" id="resultGrid">
+        <article class="video-panel panel">
+          <div class="video-cover" id="videoCover"><div class="cover-label">TIKTOK VIDEO</div><div class="cover-play">▶</div></div>
+          <div class="video-info">
+            <div class="success-badge"><span>✓</span> Hasil pencarian berhasil</div>
+            <div class="author-row"><img id="avatar" class="avatar" alt="Avatar kreator" src=""><div class="author-text"><strong id="author">@creator</strong><span id="nickname">Kreator TikTok</span></div><a id="profileLink" class="follow-btn" href="#" target="_blank" rel="noopener noreferrer">Lihat profil ↗</a></div>
+            <p class="bio" id="bio"></p>
+            <div class="stats">
+              <div><span>◉</span><b id="views">—</b><small>Views</small></div>
+              <div><span>♡</span><b id="likes">—</b><small>Likes</small></div>
+              <div><span>☏</span><b id="comments">—</b><small>Komentar</small></div>
+              <div><span>➦</span><b id="shares">—</b><small>Share</small></div>
+            </div>
+            <div class="description"><h3>Deskripsi Video</h3><p id="description">—</p></div>
+            <div class="video-id"><span>Video ID</span><div><b id="videoId">—</b><button id="copyId" type="button" title="Salin video ID">▢</button></div></div>
+            <a id="watchVideo" class="watch-link" href="#" target="_blank" rel="noopener noreferrer">Buka video TikTok ↗</a>
+          </div>
+        </article>
+        <aside class="presets-panel panel">
+          <div class="section-heading"><div><span class="heading-sparkle">✦</span><h2>Preset Ditemukan</h2></div><span class="count" id="presetCount">0</span></div>
+          <div id="presetList" class="preset-list"></div>
+          <div class="scan-note"><span>💡</span><div><b>Total preset ditemukan: <span id="totalPresets">0</span></b><small>Dipindai dari <span id="scannedComments">—</span> komentar</small></div></div>
+          <p class="disclaimer">Tautan berasal dari hasil API dan komentar publik. Periksa tujuan tautan sebelum mengunduh file.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature"><span class="feature-icon">ϟ</span><div><b>Cepat & Praktis</b><small>Pencarian otomatis dari link TikTok</small></div></div>
+      <div class="feature"><span class="feature-icon">♢</span><div><b>Sederhana</b><small>Hasil disajikan dengan jelas</small></div></div>
+      <div class="feature"><span class="feature-icon">▯</span><div><b>Responsif</b><small>Bisa diakses di HP dan PC</small></div></div>
+      <div class="feature"><span class="feature-icon">∞</span><div><b>Gratis digunakan</b><small>Tidak perlu membuat akun</small></div></div>
+    </section>
+
+    <section class="history-section" id="history"><div class="history-head"><div><span class="eyebrow">PENCARIAN TERAKHIR</span><h2>Riwayat pencarian</h2></div><button class="clear-history" id="clearHistory">Hapus riwayat</button></div><div id="historyList" class="history-list"><p class="history-empty">Riwayat pencarian akan tampil di sini.</p></div></section>
+    <section class="about-section" id="about"><div class="about-mark">✦</div><div><h2>Tentang Preset Finder</h2><p>Alat sederhana untuk mencari tautan preset yang dibagikan terkait video TikTok. Hasil bergantung pada ketersediaan dan respons layanan API SynoxCloud.</p></div></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-icon">♪</span><span><strong>TikTok Preset Finder</strong><small>Temukan preset untuk editanmu ✨</small></span></a><div class="footer-links"><a href="#home">Home</a><a href="#history">Riwayat</a><a href="#about">Tentang</a></div><div class="footer-powered">☁ Powered by <b>SynoxCloud</b></div><p>© <span id="year"></span> TikTok Preset Finder. Pastikan menghormati kreator dan hak cipta.</p></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/script.js"></script>
+</body>
+</html>

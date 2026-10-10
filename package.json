@@ -1,0 +1,13 @@
+{
+  "name": "tiktok-preset-finder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TikTok Preset Finder powered by SynoxCloud API",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
